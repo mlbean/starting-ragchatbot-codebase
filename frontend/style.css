@@ -15,7 +15,7 @@
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
     --border-color: #334155;
-    --user-message: #a0907e;
+    --user-message: #ffffff;
     --assistant-message: #374151;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     --radius: 12px;
@@ -196,7 +196,7 @@ header h1 {
 
 .message.user .message-content {
     background: var(--user-message);
-    color: white;
+    color: #1e293b;
     border-bottom-right-radius: 4px;
 }
 

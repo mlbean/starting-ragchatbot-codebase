@@ -241,8 +241,33 @@ header h1 {
 }
 
 .sources-content {
-    padding: 0 0.5rem 0.25rem 1.5rem;
+    padding: 0.25rem 0.5rem 0.5rem 1.5rem;
     color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+}
+
+.source-pill {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.12);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    white-space: nowrap;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+a.source-pill:hover,
+a.source-pill:focus-visible {
+    background: rgba(148, 163, 184, 0.22);
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+    outline: none;
 }
 
 /* Markdown formatting styles */
@@ -447,7 +472,9 @@ header h1 {
 
 /* Sidebar Headers */
 .stats-header,
-.suggested-header {
+.suggested-header,
+.new-chat-button {
+    font-family: inherit;
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--text-secondary);
@@ -457,18 +484,18 @@ header h1 {
     background: none;
     list-style: none;
     outline: none;
+    text-align: left;
     transition: color 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.stats-header:focus,
-.suggested-header:focus {
-    color: var(--primary-color);
-}
-
 .stats-header:hover,
-.suggested-header:hover {
+.stats-header:focus,
+.suggested-header:hover,
+.suggested-header:focus,
+.new-chat-button:hover,
+.new-chat-button:focus {
     color: var(--primary-color);
 }
 

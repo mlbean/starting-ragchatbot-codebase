@@ -1,10 +1,10 @@
-"""Tests for CourseSearchTool.execute() output and source tracking."""
+"""Tests for CourseSearchTool and CourseOutlineTool."""
 
 from unittest.mock import ANY
 
 import pytest
 
-from search_tools import CourseSearchTool
+from search_tools import CourseOutlineTool, CourseSearchTool
 from vector_store import SearchResults
 
 
@@ -125,3 +125,13 @@ def test_tool_definition_shape(tool):
     # Optional params present but not required.
     assert "course_name" in schema["properties"]
     assert "lesson_number" in schema["properties"]
+
+
+# ---------- CourseOutlineTool ----------
+
+
+def test_course_outline_no_course_found(fake_vector_store):
+    fake_vector_store._resolve_course_name.return_value = None
+    tool = CourseOutlineTool(fake_vector_store)
+    out = tool.execute(course_title="Nonexistent")
+    assert out == "No course found matching 'Nonexistent'."
